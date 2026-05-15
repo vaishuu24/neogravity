@@ -3,9 +3,9 @@
  */
 import React from 'react';
 
-const GlowCard = ({ children, className = '' }) => {
+const GlowCard = ({ children, className = '', ...props }) => {
   return (
-    <div className={`glass-card p-6 transition-all duration-300 hover:neon-border ${className}`}>
+    <div className={`glass-card p-6 transition-all duration-300 hover:neon-border ${className}`} {...props}>
       {children}
     </div>
   );

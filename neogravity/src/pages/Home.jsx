@@ -29,10 +29,11 @@ const Home = () => {
         <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-neon-purple/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }} />
         
         <div className="z-10 text-center">
-          <h1 className="text-6xl md:text-8xl font-black mb-4 flex justify-center neon-text">
+          <h1 className="text-6xl md:text-8xl font-black mb-4 flex justify-center neon-text" aria-label="NeoGravity">
             {title.map((char, index) => (
               <motion.span
                 key={index}
+                aria-hidden="true"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -41,14 +42,19 @@ const Home = () => {
               </motion.span>
             ))}
           </h1>
-          <motion.p 
+          <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 1 }}
-            className="text-xl md:text-2xl text-gray-300 font-light mb-8 max-w-2xl mx-auto px-4"
+            className="mb-8 max-w-3xl mx-auto px-4"
           >
-            A futuristic anti-gravity themed interactive platform
-          </motion.p>
+            <p className="text-xl md:text-2xl text-neon-cyan font-light mb-3">
+              A futuristic anti-gravity interactive platform
+            </p>
+            <p className="text-lg text-gray-300 font-rajdhani">
+              Explore advanced 3D physics simulations, navigate zero-g environments, and uncover the science behind gravitational manipulation. Created as an experimental showcase of modern web technologies.
+            </p>
+          </motion.div>
           
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -113,7 +119,6 @@ const Home = () => {
       <footer className="border-t border-white/10 py-8 mt-12 bg-space-black/50 backdrop-blur">
         <div className="max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center">
           <h2 className="text-2xl font-orbitron font-bold neon-text mb-4">NEO⚡GRAVITY</h2>
-          <p className="text-gray-500 font-rajdhani text-lg">College Final-Year Project.</p>
           <div className="flex space-x-4 mt-6">
             <span className="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:neon-border cursor-pointer transition">GH</span>
             <span className="w-10 h-10 rounded-full glass-card flex items-center justify-center hover:neon-border cursor-pointer transition">IN</span>

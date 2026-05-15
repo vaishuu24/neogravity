@@ -46,7 +46,7 @@ const Physics = () => {
           >
             <GlowCard>
               <h2 className="text-2xl font-bold text-neon-purple mb-4">{section.title}</h2>
-              <p className="text-gray-300 font-rajdhani text-lg mb-4">{section.content}</p>
+              <p className="text-gray-200 font-rajdhani text-lg mb-4">{section.content}</p>
               <div className="bg-space-black/80 rounded p-4 border border-white/5 font-mono text-neon-cyan text-center tracking-widest">
                 {section.formula}
               </div>
@@ -65,7 +65,7 @@ const Physics = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div>
-              <label className="block text-gray-400 mb-2 font-rajdhani">Mass 1 (kg)</label>
+              <label className="block text-gray-300 mb-2 font-rajdhani">Mass 1 (kg)</label>
               <input 
                 type="number" 
                 value={mass1} 
@@ -74,7 +74,7 @@ const Physics = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-400 mb-2 font-rajdhani">Mass 2 (kg)</label>
+              <label className="block text-gray-300 mb-2 font-rajdhani">Mass 2 (kg)</label>
               <input 
                 type="number" 
                 value={mass2} 
@@ -83,7 +83,7 @@ const Physics = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-400 mb-2 font-rajdhani">Distance (m)</label>
+              <label className="block text-gray-300 mb-2 font-rajdhani">Distance (m)</label>
               <input 
                 type="number" 
                 value={distance} 
@@ -94,7 +94,7 @@ const Physics = () => {
           </div>
 
           <div className="text-center p-6 bg-neon-cyan/10 rounded-lg border border-neon-cyan/30">
-            <p className="text-gray-400 mb-2 uppercase tracking-widest text-sm font-bold">Gravitational Force</p>
+            <p className="text-gray-300 mb-2 uppercase tracking-widest text-sm font-bold">Gravitational Force</p>
             <p className="text-4xl text-white font-orbitron drop-shadow-[0_0_10px_#00f5ff]">{force.toExponential(4)} N</p>
           </div>
         </GlowCard>
