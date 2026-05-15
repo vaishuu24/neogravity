@@ -14,10 +14,7 @@ const Team = () => {
   const [savedMessages, setSavedMessages] = useLocalStorage('neogravityContact', []);
 
   const teamMembers = [
-    { name: 'Alex Vance', role: 'Lead Architect', avatar: 'bg-neon-cyan/20 text-neon-cyan' },
-    { name: 'Sarah Jin', role: 'Physics Engine', avatar: 'bg-neon-purple/20 text-neon-purple' },
-    { name: 'Dr. R. Cole', role: 'AI Integrations', avatar: 'bg-white/10 text-white' },
-    { name: 'Max Thorne', role: 'UI/UX Design', avatar: 'bg-blue-500/20 text-blue-400' },
+    { name: 'Vaishnavi Kolekar', role: 'Creator', avatar: 'bg-neon-purple/20 text-neon-purple' },
   ];
 
   const handleSubmit = (e) => {
@@ -35,10 +32,10 @@ const Team = () => {
     <PageTransition>
       <div className="text-center mb-16 mt-8">
         <h1 className="text-5xl font-black neon-text uppercase tracking-widest mb-4">Command Crew</h1>
-        <p className="text-gray-400 text-xl font-rajdhani">The architects behind the NeoGravity project.</p>
+        <p className="text-gray-300 text-xl font-rajdhani">The creator behind the NeoGravity project.</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+      <div className="flex justify-center gap-6 mb-24">
         {teamMembers.map((member, idx) => (
           <motion.div 
             key={idx}
@@ -46,8 +43,9 @@ const Team = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: idx * 0.1 }}
             viewport={{ once: true }}
+            className="w-full max-w-sm"
           >
-            <GlowCard className="text-center group">
+            <GlowCard className="text-center group h-full">
               <div className={`w-24 h-24 mx-auto rounded-full ${member.avatar} flex items-center justify-center text-3xl font-orbitron mb-4 border border-current transition-transform group-hover:scale-110`}>
                 {member.name.charAt(0)}
               </div>
@@ -65,7 +63,7 @@ const Team = () => {
           
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label className="block text-gray-400 mb-2 font-rajdhani">Designation (Name)</label>
+              <label className="block text-gray-300 mb-2 font-rajdhani">Designation (Name)</label>
               <input 
                 type="text" 
                 required
@@ -75,7 +73,7 @@ const Team = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-400 mb-2 font-rajdhani">Commlink (Email)</label>
+              <label className="block text-gray-300 mb-2 font-rajdhani">Commlink (Email)</label>
               <input 
                 type="email" 
                 required
@@ -85,7 +83,7 @@ const Team = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-400 mb-2 font-rajdhani">Transmission (Message)</label>
+              <label className="block text-gray-300 mb-2 font-rajdhani">Transmission (Message)</label>
               <textarea 
                 required
                 rows="4"
