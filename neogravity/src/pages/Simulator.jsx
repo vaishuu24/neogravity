@@ -248,7 +248,7 @@ const Simulator = () => {
   const currentTheme = THEMES[theme];
 
   return (
-    <PageTransition className="flex flex-col lg:flex-row gap-6 max-h-[88vh] h-[88vh] overflow-hidden !py-0">
+    <PageTransition className="flex flex-col lg:flex-row gap-6 min-h-[calc(100vh-6rem)] lg:h-[calc(100vh-6rem)] lg:overflow-hidden pt-20 pb-4">
       {/* Side Control Panel */}
       <aside className="w-full lg:w-96 flex-shrink-0 z-10 flex flex-col gap-4 overflow-y-auto pr-1">
         <GlowCard className="p-5">
@@ -439,7 +439,7 @@ const Simulator = () => {
       </aside>
 
       {/* 3D Canvas Viewport */}
-      <div className="flex-1 glass-card overflow-hidden relative w-full h-[55vh] lg:h-full border border-white/15 rounded-2xl shadow-[0_0_30px_rgba(0,245,255,0.08)]">
+      <div className="flex-1 glass-card overflow-hidden relative w-full min-h-[450px] h-[55vh] lg:h-full border border-white/15 rounded-2xl shadow-[0_0_30px_rgba(0,245,255,0.08)]">
         <Canvas camera={{ position: [0, 0, 16], fov: 55 }}>
           <ambientLight intensity={0.4} />
           <pointLight position={[12, 12, 12]} intensity={1.5} color={currentTheme.c1} />

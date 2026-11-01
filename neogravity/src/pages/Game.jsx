@@ -140,6 +140,9 @@ const Game = () => {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
+      if (['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.code)) {
+        e.preventDefault();
+      }
       keys.current[e.code] = true;
       if (e.code === 'KeyP') {
         setGameState((prev) => (prev === 'playing' ? 'paused' : prev === 'paused' ? 'playing' : prev));
@@ -148,11 +151,16 @@ const Game = () => {
     const handleKeyUp = (e) => {
       keys.current[e.code] = false;
     };
+    const handleBlur = () => {
+      keys.current = {};
+    };
     window.addEventListener('keydown', handleKeyDown);
     window.addEventListener('keyup', handleKeyUp);
+    window.addEventListener('blur', handleBlur);
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
+      window.removeEventListener('blur', handleBlur);
     };
   }, []);
 

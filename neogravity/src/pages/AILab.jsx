@@ -33,7 +33,10 @@ const AILab = () => {
 
   const handleGenerate = async (queryToUse) => {
     const text = typeof queryToUse === 'string' ? queryToUse : prompt;
-    if (!text.trim()) return;
+    if (!text.trim()) {
+      triggerToast('Please describe an engineering requirement or choose a preset.');
+      return;
+    }
     setLoading(true);
     try {
       const generated = await generateInvention(text);
@@ -116,8 +119,14 @@ ${currentResult.safetyWarning}`;
           <textarea
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+                e.preventDefault();
+                handleGenerate();
+              }
+            }}
             className="w-full h-28 bg-space-black/60 border border-white/20 rounded-lg p-4 text-white font-rajdhani text-lg focus:outline-none focus:border-neon-cyan focus:shadow-[0_0_12px_rgba(0,245,255,0.3)] resize-none transition-all placeholder:text-gray-600"
-            placeholder="Describe your engineering requirement... (e.g. Need to float a heavy excavation station over volcanic tectonic fissures)"
+            placeholder="Describe your engineering requirement... (e.g. Need to float a heavy excavation station over volcanic tectonic fissures). [Press Ctrl+Enter to generate]"
           />
 
           {/* Quick Prompt Chips */}

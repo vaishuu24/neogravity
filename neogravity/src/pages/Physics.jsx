@@ -148,6 +148,7 @@ const Physics = () => {
               <label className="block text-gray-400 mb-1 font-rajdhani text-sm">Mass 1 (kg)</label>
               <input
                 type="number"
+                step="any"
                 value={mass1}
                 onChange={(e) => setMass1(parseFloat(e.target.value) || 0)}
                 className="w-full bg-transparent border-b border-neon-cyan text-white p-2 font-mono text-sm focus:outline-none"
@@ -159,6 +160,7 @@ const Physics = () => {
               <label className="block text-gray-400 mb-1 font-rajdhani text-sm">Mass 2 (kg)</label>
               <input
                 type="number"
+                step="any"
                 value={mass2}
                 onChange={(e) => setMass2(parseFloat(e.target.value) || 0)}
                 className="w-full bg-transparent border-b border-neon-cyan text-white p-2 font-mono text-sm focus:outline-none"
@@ -170,6 +172,7 @@ const Physics = () => {
               <label className="block text-gray-400 mb-1 font-rajdhani text-sm">Separation Distance (m)</label>
               <input
                 type="number"
+                step="any"
                 value={distance}
                 onChange={(e) => setDistance(parseFloat(e.target.value) || 0)}
                 className="w-full bg-transparent border-b border-neon-cyan text-white p-2 font-mono text-sm focus:outline-none"
@@ -224,6 +227,7 @@ const Physics = () => {
               <label className="block text-gray-400 mb-1 font-rajdhani text-sm">Celestial Mass (kg)</label>
               <input
                 type="number"
+                step="any"
                 value={escMass}
                 onChange={(e) => setEscMass(parseFloat(e.target.value) || 0)}
                 className="w-full bg-transparent border-b border-neon-purple text-white p-2 font-mono text-sm focus:outline-none"
@@ -233,6 +237,7 @@ const Physics = () => {
               <label className="block text-gray-400 mb-1 font-rajdhani text-sm">Radius from Center (m)</label>
               <input
                 type="number"
+                step="any"
                 value={escRadius}
                 onChange={(e) => setEscRadius(parseFloat(e.target.value) || 0)}
                 className="w-full bg-transparent border-b border-neon-purple text-white p-2 font-mono text-sm focus:outline-none"
