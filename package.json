@@ -1,0 +1,13 @@
+{
+  "name": "rabbit-neogravity",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NeoGravity - Anti-Gravity Interactive Platform",
+  "scripts": {
+    "dev": "npm --prefix neogravity run dev",
+    "build": "npm --prefix neogravity run build",
+    "preview": "npm --prefix neogravity run preview",
+    "start": "npm --prefix neogravity run dev"
+  }
+}
+
